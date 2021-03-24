@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	This is the special custom l10n.xml file, there can be overwritten any string from any plugin:
+	https://bgerp.org/doc/3.0/manual/kernel/extension.html#custom-l10n
+-->
+<data>
+	<!--
+		<p><ru></ru><en></en></p>
+	-->
+</data>

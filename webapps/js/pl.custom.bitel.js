@@ -12,7 +12,7 @@ $$.custom.bitel = new function() {
 	 * A demo function, may be called as $$.custom.bitel.demo().
 	 * @param {*} param 
 	 */
-	this.demo = (param) => {
+	const demo = (param) => {
 		// TODO: make logic
 	}
 

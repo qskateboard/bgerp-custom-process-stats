@@ -25,7 +25,7 @@ public class Plugin extends ru.bgcrm.plugin.Plugin {
     }
 
     @Override
-    public Map<String, String> getEndpoints() {
+    public Map<String, String> loadEndpoints() {
         return Map.of(Endpoint.JS, Endpoint.getPathPluginJS(ID));
     }
 

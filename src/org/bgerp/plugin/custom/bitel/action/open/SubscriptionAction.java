@@ -44,7 +44,7 @@ public class SubscriptionAction extends BaseAction {
         BigDecimal cost = Subscription.getCost(currencyId, sessionsId, processIds);
         form.setResponseData("cost", cost);
 
-        return data(conSet, null, JSP_PATH + "/calculate_result.jsp");
+        return html(conSet, null, JSP_PATH + "/calculate_result.jsp");
     }
 
     public ActionForward order(ActionMapping mapping, DynActionForm form, ConnectionSet conSet) throws Exception {
@@ -81,7 +81,7 @@ public class SubscriptionAction extends BaseAction {
 
         // email(conSet, email, process, processIds);
 
-        return status(con, form);
+        return json(con, form);
     }
 
     private void email(ConnectionSet conSet, String email, Process process, Set<Integer> processIds) throws BGException {

@@ -2,7 +2,7 @@
 <%@ include file="/WEB-INF/jspf/taglibs.jsp"%>
 
 <%-- getting the plugin's localizer --%>
-<c:set var="l" value='<%=ru.bgerp.l10n.Localization.getLocalizer("custom.bitel", ru.bgerp.l10n.Localization.getToLang(request))%>'/>
+<c:set var="l" value='<%=ru.bgerp.l10n.Localization.getLocalizer("custom.bitel", ru.bgerp.l10n.Localization.getLang(request))%>'/>
 
 <c:set var="resultUiid" value="${u:uiid()}"/>
 

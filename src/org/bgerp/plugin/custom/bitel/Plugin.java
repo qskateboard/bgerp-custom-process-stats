@@ -1,6 +1,7 @@
 package org.bgerp.plugin.custom.bitel;
 
 import java.sql.Connection;
+import java.util.List;
 import java.util.Map;
 
 import ru.bgcrm.event.EventProcessor;
@@ -25,8 +26,8 @@ public class Plugin extends ru.bgcrm.plugin.Plugin {
     }
 
     @Override
-    public Map<String, String> loadEndpoints() {
-        return Map.of(Endpoint.JS, Endpoint.getPathPluginJS(ID));
+    protected Map<String, List<String>> loadEndpoints() {
+        return Map.of(Endpoint.JS, List.of(Endpoint.getPathPluginJS(ID)));
     }
 
     @Override

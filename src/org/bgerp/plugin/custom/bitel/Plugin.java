@@ -11,10 +11,13 @@ import ru.bgcrm.util.ParameterMap;
 
 /**
  * BiTel's custom plugin.
+
  * @author Shamil Vakhitov
  */
 public class Plugin extends ru.bgcrm.plugin.Plugin {
     public static final String ID = "custom.bitel";
+
+    public static final String PATH_JSP_OPEN = PATH_JSP_OPEN_PLUGIN + "/" + ID;
 
     public Plugin() {
         super(ID);

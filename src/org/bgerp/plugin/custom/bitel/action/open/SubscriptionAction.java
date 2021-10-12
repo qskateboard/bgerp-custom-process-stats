@@ -31,7 +31,7 @@ import ru.bgerp.l10n.Localization;
 
 @Action(path = "/open/plugin/custom.bitel/subscription")
 public class SubscriptionAction extends BaseAction {
-    private static final String JSP_PATH = PATH_JSP_OPEN_PLUGIN + "/" + Plugin.ID;
+    private static final String PATH_JSP = Plugin.PATH_JSP_OPEN;
 
     // not more often request from a single IP as one per 10 min.
     private static final AntiSpam orderAntiSpam = new AntiSpam(10 * 60 * 1000L);
@@ -44,11 +44,11 @@ public class SubscriptionAction extends BaseAction {
         BigDecimal cost = Subscription.getCost(currencyId, sessionsId, processIds);
         form.setResponseData("cost", cost);
 
-        return html(conSet, null, JSP_PATH + "/calculate_result.jsp");
+        return html(conSet, null, PATH_JSP + "/calculate_result.jsp");
     }
 
     public ActionForward order(ActionMapping mapping, DynActionForm form, ConnectionSet conSet) throws Exception {
-        orderAntiSpam(form); 
+        orderAntiSpam(form);
 
         int currencyId = form.getParamInt("currencyId");
         int sessionsId = form.getParamInt("sessionsId");
@@ -70,7 +70,7 @@ public class SubscriptionAction extends BaseAction {
         var paramDao = new ParamValueDAO(con);
         paramDao.updateParamList(process.getId(), Subscription.PARAM_CURRENCY_ID, Set.of(currencyId));
         paramDao.updateParamList(process.getId(), Subscription.PARAM_SESSIONS_ID, Set.of(sessionsId));
-        paramDao.updateParamList(process.getId(), Subscription.PARAM_LANG_ID, 
+        paramDao.updateParamList(process.getId(), Subscription.PARAM_LANG_ID,
             Set.of(Subscription.langToId(Localization.getLang(form.getHttpRequest()))));
         paramDao.updateParamEmail(process.getId(), Subscription.PARAM_EMAIL_ID, 0, new ParameterEmailValue(email));
 
@@ -85,10 +85,10 @@ public class SubscriptionAction extends BaseAction {
     }
 
     private void email(ConnectionSet conSet, String email, Process process, Set<Integer> processIds) throws BGException {
-        var query = 
-            "SELECT description FROM " + Tables.TABLE_PROCESS + " AS p " + 
+        var query =
+            "SELECT description FROM " + Tables.TABLE_PROCESS + " AS p " +
             "WHERE id IN (" + Utils.toString(processIds) + ")";
-        
+
 
         var m = new Message()
             .withProcessId(process.getId())
@@ -108,7 +108,7 @@ public class SubscriptionAction extends BaseAction {
 
         var wait = orderAntiSpam.getWaitTimeout(ip);
         if (wait > 0)
-            throw new BGMessageException("Следующий заказ с этого IP можно сделать через: %s", 
+            throw new BGMessageException("Следующий заказ с этого IP можно сделать через: %s",
                 TimeUtils.formatDeltaTime(wait));
     }
 }

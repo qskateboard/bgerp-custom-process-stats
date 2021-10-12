@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.bgerp.util.Log;
+
 import ru.bgcrm.cache.Cache;
 import ru.bgcrm.cache.CacheHolder;
 import ru.bgcrm.cache.ParameterCache;
@@ -14,7 +16,6 @@ import ru.bgcrm.dao.process.Tables;
 import ru.bgcrm.model.param.ParameterListCountValue;
 import ru.bgcrm.util.Setup;
 import ru.bgcrm.util.Utils;
-import ru.bgerp.util.Log;
 
 /**
  * Calculator and constants for subscriptions.
@@ -35,7 +36,7 @@ public class Subscription extends Cache<Subscription> {
 
     /** Contact E-Mail, type 'email' */
     public static final int PARAM_EMAIL_ID = 53;
-    
+
     /** Subscription mode, type 'list' */
     public static final int PARAM_CURRENCY_ID = 52;
 
@@ -85,7 +86,7 @@ public class Subscription extends Cache<Subscription> {
 
         for (int processId : processIds) {
             var key = new SubscriptionKey(processId, currencyId);
-            
+
             var prices = cacheInstance.prices.get(key);
             if (prices == null) continue;
 
@@ -118,7 +119,7 @@ public class Subscription extends Cache<Subscription> {
         try (var con = Setup.getSetup().getDBSlaveConnectionFromPool()) {
             var paramDao = new ParamValueDAO(con);
 
-            var query = 
+            var query =
                 "SELECT id FROM " + Tables.TABLE_PROCESS + " AS p " +
                 "WHERE type_id=? AND status_id IN (" + Utils.toString(List.of(PROCESS_STATUS_OPEN_ID, PROCESS_STATUS_SUPPORT_ID)) + ")";
             var ps = con.prepareStatement(query);

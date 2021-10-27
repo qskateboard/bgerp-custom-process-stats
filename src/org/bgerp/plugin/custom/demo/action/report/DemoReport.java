@@ -1,4 +1,4 @@
-package org.bgerp.plugin.custom.action.report;
+package org.bgerp.plugin.custom.demo.action.report;
 
 import org.bgerp.plugin.report.action.ReportActionBase;
 import org.bgerp.plugin.report.model.Columns;

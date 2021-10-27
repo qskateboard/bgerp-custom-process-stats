@@ -1,15 +1,15 @@
 /*
- * Plugin Custom
+ * Plugin Custom Demo
  */
 "use strict";
 
 $$.custom = $$.custom || {};
 
-$$.custom = new function() {
+$$.custom.demo = new function() {
 	const debug = $$.debug("custom");
 
 	/**
-	 * A demo function, may be called as $$.custom.demo().
+	 * A demo function, may be called as $$.custom.demo.demo().
 	 * @param {*} param
 	 */
 	const demo = (param) => {

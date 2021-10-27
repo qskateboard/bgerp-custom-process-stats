@@ -1,14 +1,14 @@
-package org.bgerp.plugin.custom.action.open;
+package org.bgerp.plugin.custom.demo.action;
 
 import org.apache.struts.action.ActionForward;
-import org.bgerp.plugin.custom.Plugin;
+import org.bgerp.plugin.custom.demo.Plugin;
 
 import ru.bgcrm.servlet.ActionServlet.Action;
 import ru.bgcrm.struts.action.BaseAction;
 import ru.bgcrm.struts.form.DynActionForm;
 import ru.bgcrm.util.sql.ConnectionSet;
 
-@Action(path = "/open/plugin/custom/demo")
+@Action(path = "/user/plugin/custom.demo/demo")
 public class DemoAction extends BaseAction {
     private static final String PATH_JSP = Plugin.PATH_JSP_OPEN;
 

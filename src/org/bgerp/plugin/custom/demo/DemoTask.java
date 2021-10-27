@@ -1,4 +1,4 @@
-package org.bgerp.plugin.custom;
+package org.bgerp.plugin.custom.demo;
 
 import org.bgerp.util.Log;
 
@@ -9,6 +9,5 @@ public class DemoTask implements Runnable {
     @Override
     public void run() {
         log.info("Started.");
-
     }
 }

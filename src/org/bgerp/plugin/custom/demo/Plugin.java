@@ -1,4 +1,4 @@
-package org.bgerp.plugin.custom;
+package org.bgerp.plugin.custom.demo;
 
 import java.sql.Connection;
 import java.util.List;
@@ -7,7 +7,6 @@ import java.util.Map;
 import ru.bgcrm.event.EventProcessor;
 import ru.bgcrm.event.ParamChangedEvent;
 import ru.bgcrm.plugin.Endpoint;
-import ru.bgcrm.util.ParameterMap;
 
 /**
  * BGERP Custom Demo Plugin.
@@ -16,17 +15,12 @@ import ru.bgcrm.util.ParameterMap;
  * @author Shamil Vakhitov
  */
 public class Plugin extends ru.bgcrm.plugin.Plugin {
-    public static final String ID = "custom";
+    public static final String ID = "custom.demo";
 
     public static final String PATH_JSP_OPEN = PATH_JSP_OPEN_PLUGIN + "/" + ID;
 
     public Plugin() {
         super(ID);
-    }
-
-    @Override
-    public boolean isEnabled(ParameterMap config, String defaultValue) {
-        return true;
     }
 
     @Override

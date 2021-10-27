@@ -1,4 +1,4 @@
-package org.bgerp.plugin.custom.bitel;
+package org.bgerp.plugin.custom;
 
 import java.sql.Connection;
 import java.util.List;
@@ -10,12 +10,13 @@ import ru.bgcrm.plugin.Endpoint;
 import ru.bgcrm.util.ParameterMap;
 
 /**
- * BiTel's custom plugin.
-
+ * BGERP Custom Demo Plugin.
+ * Copy it to your own class, placed in org.bgerp.plugin package.
+ *
  * @author Shamil Vakhitov
  */
 public class Plugin extends ru.bgcrm.plugin.Plugin {
-    public static final String ID = "custom.bitel";
+    public static final String ID = "custom";
 
     public static final String PATH_JSP_OPEN = PATH_JSP_OPEN_PLUGIN + "/" + ID;
 
@@ -38,10 +39,7 @@ public class Plugin extends ru.bgcrm.plugin.Plugin {
         super.init(con);
 
         EventProcessor.subscribe((e, conSet) -> {
-            var paramId = e.getParameter().getId();
-            if (paramId == Subscription.PARAM_PRICE_EUR_ID || paramId == Subscription.PARAM_PRICE_RUB_ID) {
-                Subscription.flush();
-            }
+            //log.
         }, ParamChangedEvent.class);
     }
 }

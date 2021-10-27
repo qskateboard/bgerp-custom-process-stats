@@ -1,0 +1,5 @@
+<item title="Plugin Custom">
+	<item title="Demo Action">
+		<item action="org.bgerp.plugin.custom.action.DemoAction" title="Demo"/>
+	</item>
+</item>

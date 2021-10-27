@@ -5,12 +5,12 @@
 
 $$.custom = $$.custom || {};
 
-$$.custom.bitel = new function() {
-	const debug = $$.debug("custom.bitel");
-	
+$$.custom = new function() {
+	const debug = $$.debug("custom");
+
 	/**
-	 * A demo function, may be called as $$.custom.bitel.demo().
-	 * @param {*} param 
+	 * A demo function, may be called as $$.custom.demo().
+	 * @param {*} param
 	 */
 	const demo = (param) => {
 		// TODO: make logic

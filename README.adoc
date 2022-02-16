@@ -1,4 +1,7 @@
-= BGERP CUSTOM DEMO
 
-This is the demo repo, fork it to your own:
-https://bgerp.org/doc/3.0/manual/kernel/extension.html#custom
+= StatsPlugin
+
+Plugin with basic statistics on processes. There is a choice of the type of process and the time interval at which the selection of processes works.
+
+
+Based on this plugin, you can create new blank pages with a ready-made handler.

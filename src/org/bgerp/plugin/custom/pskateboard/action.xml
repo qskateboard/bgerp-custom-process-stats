@@ -1,0 +1,5 @@
+<item title="Stats Plugin">
+	<item action="org.bgerp.plugin.custom.pskateboard.action.StatsAction:null" title="Статистика">
+		<item action="org.bgerp.plugin.custom.pskateboard.action.StatsAction:render" title="Формирование статистики" />
+	</item>
+</item>
